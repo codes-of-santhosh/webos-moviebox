@@ -10,10 +10,12 @@ package-lock.json
 # Diagnostic & Scratch Scripts
 auto_diag.js
 check_*.js
+create_github_release.js
 diagnose_*.js
 listen_*.js
 live_*.js
 monitor_*.js
+optimize_github_seo.js
 test_*.js
 tv_diag.js
 
