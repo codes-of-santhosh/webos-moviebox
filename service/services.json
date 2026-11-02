@@ -1,0 +1,26 @@
+{
+  "id": "com.moviebox.webos.service",
+  "services": [
+    {
+      "name": "com.moviebox.webos.service",
+      "description": "MovieBox Luna IPC Backend Service",
+      "jsservice": true,
+      "methods": [
+        { "method": "home", "access": "public" },
+        { "method": "search", "access": "public" },
+        { "method": "details", "access": "public" },
+        { "method": "seasonInfo", "access": "public" },
+        { "method": "playInfo", "access": "public" },
+        { "method": "captions", "access": "public" },
+        { "method": "keepAlive", "access": "public" },
+        { "method": "fourkhdSearch", "access": "public" },
+        { "method": "fourkhdDetails", "access": "public" },
+        { "method": "dramachiSearch", "access": "public" },
+        { "method": "dramachiDetails", "access": "public" },
+        { "method": "dramachiStream", "access": "public" },
+        { "method": "stremioManifest", "access": "public" },
+        { "method": "stremioStreams", "access": "public" }
+      ]
+    }
+  ]
+}

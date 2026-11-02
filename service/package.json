@@ -1,0 +1,9 @@
+{
+  "name": "com.moviebox.webos.service",
+  "version": "1.0.0",
+  "description": "Backend daemon service for MovieBox webOS TV app",
+  "main": "service.js",
+  "dependencies": {
+    "webos-service": "^1.3.0"
+  }
+}

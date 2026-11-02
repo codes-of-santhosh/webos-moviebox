@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build Packages (root build artifacts ignored, repo package tracked)
+*.ipk
+!repo/*.ipk
+*.apk
+
+# Diagnostic & Scratch Scripts
+auto_diag.js
+check_*.js
+diagnose_*.js
+listen_*.js
+live_*.js
+monitor_*.js
+test_*.js
+tv_diag.js
+
+# Temporary & Local Folders
+.agents/
+Claude works/
+scripts/
+temp_*/
+*.log
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

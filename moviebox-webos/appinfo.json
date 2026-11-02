@@ -1,0 +1,23 @@
+{
+  "id": "com.moviebox.webos",
+  "version": "1.2.0",
+  "vendor": "MovieBox",
+  "type": "web",
+  "main": "index.html",
+  "title": "MovieBox",
+  "icon": "images/icon.png",
+  "largeIcon": "images/largeIcon.png",
+  "appDescription": "Stream movies, TV shows, and anime with multiple providers on LG webOS TV.",
+  "bgColor": "#0c0e12",
+  "iconColor": "#2563eb",
+  "uiRevision": "2",
+  "inspectable": true,
+  "requiredPermissions": [
+    "time.query",
+    "activity.operation",
+    "applications.operation"
+  ],
+  "requiredACG": [],
+  "nativeLifeCycleInterfaceVersion": 2,
+  "disableBackHistoryAPI": true
+}

@@ -1,0 +1,49 @@
+name: Release & Build webOS IPK
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install webOS TV CLI
+        run: npm install -g @webos-tools/cli
+
+      - name: Package MovieBox Modern IPK
+        run: |
+          ares-package design_Webos service
+          ares-package moviebox-webos service
+          ls -la *.ipk
+
+      - name: Calculate Checksums
+        id: checksums
+        run: |
+          SHA256_MODERN=$(sha256sum com.moviebox.webos_*_all.ipk | head -n 1 | awk '{print $1}')
+          echo "sha256=$SHA256_MODERN" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            com.moviebox.webos_*.ipk
+            repo/apps.json
+            repo/manifest.json
+          draft: false
+          prerelease: false
+          generate_release_notes: true

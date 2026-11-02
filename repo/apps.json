@@ -1,0 +1,29 @@
+{
+  "packages": [
+    {
+      "id": "com.moviebox.webos",
+      "title": "MovieBox",
+      "iconUri": "https://raw.githubusercontent.com/codes-of-santhosh/webos-moviebox/main/design_Webos/images/icon.png",
+      "manifestUrl": "https://raw.githubusercontent.com/codes-of-santhosh/webos-moviebox/main/repo/manifest.json",
+      "manifest": {
+        "id": "com.moviebox.webos",
+        "version": "1.2.1",
+        "type": "web",
+        "title": "MovieBox",
+        "appDescription": "High-performance streaming app for LG webOS Smart TVs featuring multi-provider movie & series catalog, 4K/1080p hardware-accelerated playback, multi-language subtitles, and remote-friendly spatial navigation.",
+        "iconUri": "https://raw.githubusercontent.com/codes-of-santhosh/webos-moviebox/main/design_Webos/images/icon.png",
+        "sourceUrl": "https://github.com/codes-of-santhosh/webos-moviebox",
+        "rootRequired": false,
+        "ipkUrl": "https://raw.githubusercontent.com/codes-of-santhosh/webos-moviebox/main/repo/com.moviebox.webos_1.2.1_all.ipk",
+        "ipkHash": {
+          "sha256": "ea421d116f22ac6ce7779a8a91df85640c5bf2730ba4c72c81ddc1ba18ed77e7"
+        },
+        "ipkSize": 345616
+      },
+      "shortDescription": "High-performance movie & TV streaming app for LG webOS TVs with multi-provider failover, HEVC/4K playback, and subtitles.",
+      "requirements": {
+        "webosRelease": ">=4.0"
+      }
+    }
+  ]
+}

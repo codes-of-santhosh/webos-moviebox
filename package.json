@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dashjs": "^5.2.1",
+    "webostvjs": "^1.2.13"
+  }
+}
