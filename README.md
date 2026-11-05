@@ -35,7 +35,7 @@
 | webOS Version | TV Models / Year | Status |
 | :--- | :--- | :--- |
 | **webOS 24 (v9.x)** | 2024 OLED (B4, C4, G4, M4) / QNED | ✅ Fully Tested |
-| **webOS 23 (v8.x)** | 2023 OLED (B3, C3, G3) / UR80 / UR90 | ✅ Verified on Hardware (43UR8020PSB) |
+| **webOS 23 (v8.x)** | 2023 OLED (B3, C3, G3) / UR80 / UR90 | ✅ Fully Compatible |
 | **webOS 22 (v7.x)** | 2022 OLED (A2, B2, C2, G2) / UQ Series | ✅ Fully Compatible |
 | **webOS 6.0** | 2021 OLED (A1, B1, C1, G1) / UP Series | ✅ Fully Compatible |
 | **webOS 5.0** | 2020 OLED (BX, CX, GX) / UN Series | ✅ Fully Compatible |
