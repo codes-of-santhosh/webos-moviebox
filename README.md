@@ -108,7 +108,7 @@ ares-launch -d mytv com.moviebox.webos
 ## 🏗️ Architecture & How It Works
 
 MovieBox webOS is engineered specifically to overcome webOS's browser sandbox and media limitations:
-<center>
+
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -133,7 +133,7 @@ MovieBox webOS is engineered specifically to overcome webOS's browser sandbox an
                                ▼
                    High-Speed Global CDN Endpoints
 ```
-</center>
+
 1. **Persistent Daemon Lifecycle:** By default, webOS terminates Node.js background services after 5 seconds of inactivity. MovieBox registers a persistent Luna subscription channel (`luna://com.moviebox.webos.service/keepAlive`) on app initialization, guaranteeing continuous daemon execution while you watch.
 2. **Byte-Range Sanitization:** CDN endpoints deliver video streams with `content-disposition: attachment`, which causes TV media pipelines to fail during byte seeking. The local proxy strips download flags, injects `accept-ranges: bytes` and `access-control-allow-origin: *`, enabling flawless hardware-accelerated timeline scrubbing.
 3. **Resilient Host Rotation:** Automatically balances requests across a dynamic pool of verified API gateways (`api4.aoneroom.com`, `api5.aoneroom.com`, etc.) with intelligent socket timeouts and exponential retry fallbacks.
