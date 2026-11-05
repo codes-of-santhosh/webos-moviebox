@@ -67,7 +67,7 @@ You can add MovieBox directly into your TV's **Homebrew Channel** to install and
 If you have [webOS Dev Manager](https://github.com/webosbrew/dev-manager-desktop) on Windows, macOS, or Linux:
 
 1. Download the latest `.ipk` package from [GitHub Releases](https://github.com/codes-of-santhosh/webos-moviebox/releases/latest):
-   - `com.moviebox.webos_1.2.1_all.ipk` (Modern Premium UI)
+   - `com.moviebox.webos_1.2.2_all.ipk` (Modern Premium UI)
 2. Connect webOS Dev Manager to your LG TV (via Developer Mode or Root).
 3. Click **Install IPK** or drag-and-drop the downloaded `.ipk` into the window.
 4. The app will install and appear immediately on your TV launcher ribbon.
@@ -80,10 +80,10 @@ For developers with `@webos-tools/cli` installed:
 
 ```bash
 # 1. Download latest IPK release
-curl -LO https://github.com/codes-of-santhosh/webos-moviebox/releases/download/v1.2.1/com.moviebox.webos_1.2.1_all.ipk
+curl -LO https://github.com/codes-of-santhosh/webos-moviebox/releases/download/v1.2.2/com.moviebox.webos_1.2.2_all.ipk
 
 # 2. Install directly to your configured TV device
-ares-install -d mytv com.moviebox.webos_1.2.1_all.ipk
+ares-install -d mytv com.moviebox.webos_1.2.2_all.ipk
 
 # 3. Launch on the TV
 ares-launch -d mytv com.moviebox.webos
