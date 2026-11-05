@@ -853,57 +853,6 @@ body.dpad-active * {
   box-shadow: var(--focus-glow);
 }
 
-/* Subtitle & Quality Modals */
-.player-modal {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--surface-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  padding: 36px;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  min-width: 480px;
-}
-
-.modal-title {
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 24px;
-  color: var(--ink-primary);
-}
-
-.modal-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.modal-item {
-  padding: 14px 20px;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 8px;
-  background: var(--surface-elevated);
-  border: 1px solid var(--border-hairline);
-  color: var(--ink-secondary);
-  cursor: pointer;
-}
-
-.modal-item.active {
-  border-color: var(--accent-action);
-  color: #fff;
-}
-
-.modal-item.focused {
-  border-color: var(--border-focused);
-  background: var(--surface-card-hover);
-  color: #fff;
-}
-
 /* ==========================================================================
    Skeletons & Feedback States
    ========================================================================== */
@@ -1197,12 +1146,17 @@ body.dpad-active * {
 
 .player-modal {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1010;
+  z-index: 9999;
 }
 
 .player-modal-box {
@@ -1215,6 +1169,7 @@ body.dpad-active * {
   max-height: 82vh;
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .modal-title {

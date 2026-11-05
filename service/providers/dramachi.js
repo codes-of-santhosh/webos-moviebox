@@ -25,8 +25,24 @@ function getJson(path) {
 
 const DramachiProvider = {
   async search(keyword) {
-    const data = await getJson(`/?interface=search&keyword=${encodeURIComponent(keyword)}`);
-    return (data?.data || []).map(item => ({
+    if (!keyword || !keyword.trim()) return [];
+    const term = keyword.trim();
+    const data = await getJson(`/?interface=search&q=${encodeURIComponent(term)}`);
+    const rawList = Array.isArray(data?.data) ? data.data : [];
+
+    // Filter to ensure relevance so random catalog dumps are not shown
+    const cleanTerm = term.toLowerCase().replace(/[^a-z0-9]/g, ' ').trim();
+    const termWords = cleanTerm.split(/\s+/).filter(w => w.length > 2);
+
+    const filtered = rawList.filter(item => {
+      if (!item || !item.title) return false;
+      const titleLower = item.title.toLowerCase();
+      if (titleLower.includes(cleanTerm)) return true;
+      if (termWords.length > 0 && termWords.some(w => titleLower.includes(w))) return true;
+      return false;
+    });
+
+    return filtered.map(item => ({
       id: item.id,
       title: item.title,
       year: item.year,

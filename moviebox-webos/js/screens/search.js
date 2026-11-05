@@ -92,8 +92,20 @@ const SearchScreen = {
         return;
       }
 
+      // Deduplicate results by normalized title
+      const seenTitles = new Set();
+      const uniqueResults = [];
+      for (const item of allResults) {
+        if (!item || !item.title) continue;
+        const norm = item.title.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!seenTitles.has(norm)) {
+          seenTitles.add(norm);
+          uniqueResults.push(item);
+        }
+      }
+
       // Limit results to 24 to keep TV DOM ultra lightweight
-      const displayResults = allResults.slice(0, 24);
+      const displayResults = uniqueResults.slice(0, 24);
 
       resultsContainer.innerHTML = displayResults.map(item => `
         <div class="card focusable" tabindex="0" onclick="App.openDetail('${item.id}', '${item.provider}')">
